@@ -1,0 +1,32 @@
+[
+	{
+		"id": 1,
+		"name": "Pork - Sausage Casing",
+		"size": "L",
+		"price": 22
+	},
+	{
+		"id": 2,
+		"name": "Wiberg Super Cure",
+		"size": "M",
+		"price": 43
+	},
+	{
+		"id": 3,
+		"name": "Wine - Chenin Blanc K.w.v.",
+		"size": "XL",
+		"price": 2
+	},
+	{
+		"id": 4,
+		"name": "Wine - Sherry Dry Sack, William",
+		"size": "L",
+		"price": 60
+	},
+	{
+		"id": 5,
+		"name": "Asparagus - White, Fresh",
+		"size": "XS",
+		"price": 17
+	}
+]
