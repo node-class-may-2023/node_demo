@@ -1,33 +1,9 @@
-// const { logger } = require('./logger')
-// const { isAuthorized } = require('./auth')
-// const path = require('path')
 const fs = require('fs');
 const http = require('http');
 const products = require('./mockData.json');
+const _ = require('underscore');
 
-// logger('some message from index.js')
-// console.log(isAuthorized())
-
-// fs.readdir('./', (error, files) => {
-//   if (error) console.log(error)
-//   else console.log(files)
-// })
-
-// fs.readFile('./node_demo_file.txt', (err, buf) => {
-//   if (err) console.log(error)
-//   else console.log(buf.toString())
-// })
-
-// fs.writeFile('greetings.txt', '____Hello World from Index.js____', err => {
-//   if (err) console.log(err)
-//   else console.log('file write successful')
-// })
-
-// const pathObj = path.parse(__)
-
-// console.log(pathObj)
-
-// console.log(module)
+console.log(_.flatten([1, [2], [3, [[4]]]]));
 
 const localServer = (req, res) => {
   if (req.url === '/') {
@@ -42,7 +18,9 @@ const localServer = (req, res) => {
 
   if (req.url === '/api/products') {
     if (req.method.toLowerCase() !== 'get') {
-      res.write(`{"errorMessage": "Only GET request are allowed"}`);
+      res.setHeader('Content-Type', 'text/html');
+      res.setHeader('X-Foo', 'bar');
+      res.writeHead(405, { 'Content-Type': 'text/plain' });
       res.end();
       return;
     }
